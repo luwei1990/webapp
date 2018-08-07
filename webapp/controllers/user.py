@@ -8,7 +8,6 @@ user_blueprint = Blueprint('user', __name__)
 
 
 class UserService(Resource):
-
     def post(self):
         user_post = reqparse.RequestParser()
         user_post.add_argument('username', type=str, required=True)

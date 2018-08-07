@@ -59,10 +59,20 @@ rest_api.init_app(app)
 #         g.user = User.query.get(session['user_id'])
 #     else:
 #         g.user = None
+from tasks import add
 
 @app.route('/')
 def index():
-    return 'hello word'
+    result = add.apply_async(args=[40, 69])
+    print result
+    return str(result.get())
+
+
+@app.route('/status/<task_id>')
+def get_status(task_id):
+    result = add.AsyncResult(task_id)
+    return result.state
+
 
 
 

@@ -14,5 +14,5 @@ def make_shell_context():
     return dict(app=app, db=db, User=Users, Post=Post, Tag=Tag, Comment=Comment)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0', debug=True)
     # db.create_all()

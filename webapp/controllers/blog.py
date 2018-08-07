@@ -1,6 +1,3 @@
-# import datetime
-# from os import path
-# from sqlalchemy import func
 from flask import Blueprint, abort
 from flask_restful import Resource, Api, reqparse
 
@@ -24,7 +21,6 @@ class BlogService(Resource):
         db.session.add(post)
         db.session.commit()
 
-    @jwt_required()
     def get(self):
         data = reqparse.RequestParser()
         data.add_argument('title', type=str, required=True)
