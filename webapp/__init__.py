@@ -31,6 +31,7 @@ rest_api.add_resource(BlogService, '/blog')
 rest_api.init_app(app)
 
 
+
 # @auth.verify_password
 # def verify_password(username_or_token, password):
 #     # first try to authenticate by token
